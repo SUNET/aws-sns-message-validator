@@ -2,8 +2,8 @@ from datetime import datetime
 from setuptools import setup, find_packages
 
 DEPENDENCIES = [
-    'requests==2.24.0',
-    'cryptography==3.2',
+    'requests==2.24.*',
+    'cryptography==3.2.*',
 ]
 
 EXCLUDED_PACKAGES = [
