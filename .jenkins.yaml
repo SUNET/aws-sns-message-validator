@@ -1,0 +1,15 @@
+builders:
+  - script
+triggers:
+  cron: "@weekly"
+slack:
+  room: "eduid-builds"
+clean_workspace: true
+publish_over_ssh:
+  - pypi.sunet.se
+
+script:
+  - "python3.7 -m venv venv"
+  - ". venv/bin/activate"
+  - "pip install -U setuptools wheel mypy"
+  - "python setup.py sdist bdist_wheel --universal"
